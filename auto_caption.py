@@ -5,7 +5,7 @@ from PIL import Image
 from transformers import BlipProcessor, BlipForConditionalGeneration
 
 # 1. Setup your paths (Change this to your actual folder name!)
-IMAGE_FOLDER = "data/DONNEE_ORIGINAL_AVANT_TRANSFORMATION/"
+IMAGE_FOLDER = "FRUIT-CAPTION/data/DONNEE_ORIGINAL_AVANT_TRANSFORMATION/"
 OUTPUT_JSON = "dataset_captions.json"
 
 # 2. Load the BLIP model from Hugging Face
