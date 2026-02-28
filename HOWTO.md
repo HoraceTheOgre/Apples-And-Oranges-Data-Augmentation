@@ -10,5 +10,3 @@ source dataset_env/bin/activate
 ```
 pip install datasets matplotlib pillow
 ```
-
-# Step 4: create input data for the model
