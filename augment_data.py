@@ -26,13 +26,13 @@ class AddGaussianNoise(object):
 augmentations = transforms.Compose([
     # 1. Rotation: Randomly rotates between -90 and 90 degrees
     transforms.RandomApply([transforms.RandomRotation(degrees=(-90, 90))], p=0.5),
-    
-    # 2 & 3. Translation & Scaling: Shifts up to 20% off-center and scales up to 110%
-    transforms.RandomApply([transforms.RandomAffine(degrees=0, translate=(0.2, 0.2), scale=(1.0, 1.1))], p=0.5),
-    
+
+    # 2 & 3. Translation & Scaling: Shifts up to 20% off-center and scales between 70% and 150%
+    transforms.RandomApply([transforms.RandomAffine(degrees=0, translate=(0.2, 0.2), scale=(0.7, 1.5))], p=0.5),
+
     # 4. Flipping: 50% chance to flip horizontally
     transforms.RandomHorizontalFlip(p=0.5),
-    
+
     # 5. Noise: Convert to PyTorch tensor, apply Gaussian noise, convert back to image
     transforms.ToTensor(),
     transforms.RandomApply([AddGaussianNoise(std=0.05)], p=0.3),
